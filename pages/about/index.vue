@@ -1,5 +1,5 @@
 <template>
-  Page de Criação
+  Pagina de about
 </template>
 
 <script setup lang="ts">
