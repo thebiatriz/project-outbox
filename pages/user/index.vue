@@ -1,8 +1,3 @@
 <template>
-    <main>
-        <p>Esta é a view principal do usuário</p>
-    </main>
+  Page Usuario
 </template>
-
-<script setup lang="ts">
-</script>

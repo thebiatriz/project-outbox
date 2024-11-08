@@ -1,8 +1,11 @@
 <template>
-    <main>
-        <p>Esta é a view de criar uma nova história</p>
-    </main>
+  Page de Criação
 </template>
 
 <script setup lang="ts">
+
+definePageMeta({
+  middleware: 'auth'
+})
+
 </script>
