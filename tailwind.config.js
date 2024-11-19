@@ -9,8 +9,12 @@ export default {
     "./error.vue",
   ],  
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'courgette': ['Courgette'],
+        'roboto': ['Roboto']
+      }
+    },
   },
   plugins: [],
 }
-
