@@ -2,7 +2,9 @@
   <main>
     <NuxtLayout>
       <navbar />
-      <NuxtPage />
+      <div class="pt-32 px-14">
+        <NuxtPage />
+      </div>
     </NuxtLayout>
   </main>
 </template>
