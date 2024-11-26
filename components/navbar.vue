@@ -28,7 +28,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref } from "vue"
 
 const views = ref([
     { label: "Home", path: "/" },
@@ -42,7 +42,7 @@ const userRegistry = ref([
 ]);
 
 function isCurrentRoute(path: string): boolean {
-    const route = useRoute();
-    return route.path === path;
+    const route = useRoute()
+    return route.path === path
 }
 </script>
