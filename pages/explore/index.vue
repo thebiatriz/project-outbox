@@ -1,6 +1,6 @@
 <template>
-  <main class="bg-gray-50 w-full h-screen p-20">
-    <Breadcrumb :model="items" style="background-color: #f9fafb;">
+  <main class="w-full h-screen p-10">
+    <Breadcrumb :model="items"  >
       <template #item="{ item, props }">
         <router-link v-if="item.route" v-slot="{ href, navigate }" :to="item.route" custom>
           <a :href="href" v-bind="props.action" @click="navigate">
@@ -14,10 +14,10 @@
       <span class="flex text-violet-500 text-4xl font-bold">Explorar</span>
       <span class="flex text-gray-400 text-2xl">Novos Lançamentos</span>
     </section>
-    <section class="grid grid-cols-2 bg-gray-100 mt-14 w-full drop-shadow-md p-4">      
+    <section class="grid grid-cols-2 bg-gray-100 gap-8 mt-10 w-full drop-shadow-md p-4">      
       <div v-for="info in information">
         <CardBookDescription :information="info" />
-      </div>  
+      </div> 
     </section>
   </main>
 </template>
@@ -62,6 +62,15 @@ const information = ref([
               'consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     textStyle: [{ label: 'Fantasia' },{ label: 'Infantil' },{ label: 'Aventura' }],
     image: 'https://www.scholastic.ca/hipoint/648/?src=9781338266979.jpg&w=380',
-  } as BookInformation
+  } as BookInformation,
+  {
+    statusBook: 'COMPLETED', bookTitle: 'O Peregrino', authorName: 'Jonh Bunyan', rating: '+10',
+    abstract: '1Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet,' +
+              'consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.' +
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. 2Lorem ipsum dolor sit amet,' +
+              'consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    textStyle: [{ label: 'Drama' },{ label: 'Aventura' },{ label: 'História' },{ label: 'História' },{ label: 'História' },{ label: 'História' }],
+    image: 'https://cdn.awsli.com.br/324/324133/produto/297514997/o_peregrino_comentado_amp-6iuxteinwa.jpg',
+  } as BookInformation,
 ])
 </script>
