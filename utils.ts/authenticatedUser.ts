@@ -9,4 +9,3 @@ export function verifyAuthentication(): boolean {
 export function clearAuthentication(): void {
   localStorage.removeItem('auth');
 }
-  

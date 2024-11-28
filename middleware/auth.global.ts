@@ -1,14 +1,12 @@
-import { getAuth } from "firebase/auth";
-import { verifyAuthentication } from "~/utils.ts/authenticatedUser"
+import useAuth from "~/composables/useAuth";
+import { verifyAuthentication } from "~/utils.ts/authenticatedUser";
 
 export default defineNuxtRouteMiddleware(async (to, from) => {
-    const auth = getAuth();
-    const user = auth.currentUser;
-    
-    const authenticated = user !== null && verifyAuthentication();
+    const { isAuthenticated } = useAuth();
+
+    const authenticated = isAuthenticated.value && verifyAuthentication();
 
     if (!authenticated && to.path !== '/login') {
-        return navigateTo('/login')
-      }   
-  })
-
+        return navigateTo('/login');
+    }
+})

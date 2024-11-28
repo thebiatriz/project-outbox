@@ -10,22 +10,22 @@ export default function useFirestore() {
 
     const get = (collectionName: string, documentId: string) => {
         const docRef = doc(firestore, collectionName, documentId);
-        return getDoc(docRef);  // Retorna uma Promise
+        return getDoc(docRef);
     };
 
     const getAll = (collectionName: string) => {
         const querySnapshot = getDocs(collection(firestore, collectionName));
-        return querySnapshot;  // Retorna uma Promise
+        return querySnapshot;
     };
 
     const update = (collectionName: string, documentId: string, data: object) => {
         const docRef = doc(firestore, collectionName, documentId);
-        return updateDoc(docRef, data);  // Retorna uma Promise
+        return updateDoc(docRef, data);
     };
 
     const deleteR = (collectionName: string, documentId: string) => {
         const docRef = doc(firestore, collectionName, documentId);
-        return deleteDoc(docRef);  // Retorna uma Promise
+        return deleteDoc(docRef);
     };
 
     return {
