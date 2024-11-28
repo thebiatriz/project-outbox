@@ -5,7 +5,7 @@
   <main>
     <NuxtLayout>
       <navbar />
-      <div class="pt-32 px-14">
+      <div class="px-4 sm:px-8 lg:px-14 pt-32">
         <NuxtPage />
       </div>
     </NuxtLayout>

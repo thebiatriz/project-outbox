@@ -14,11 +14,16 @@
       <span class="flex text-violet-500 text-4xl font-bold">Explorar</span>
       <span class="flex text-gray-400 text-2xl">Novos Lançamentos</span>
     </section>
-    <section class="grid grid-cols-2 bg-gray-100 gap-8 mt-10 w-full drop-shadow-md p-4">      
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-4">          
+      <div v-for="info in information">
+        <CardBookDescription2 :information="info" />
+      </div>
+    </section>
+    <!-- <section class="grid grid-cols-2 bg-gray-100 gap-8 mt-10 w-full drop-shadow-md p-4">      
       <div v-for="info in information">
         <CardBookDescription :information="info" />
       </div> 
-    </section>
+    </section> -->
   </main>
 </template>
 
