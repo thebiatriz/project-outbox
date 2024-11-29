@@ -11,15 +11,13 @@ export default defineNuxtPlugin(nuxtApp => {
         if (!getApps().length) {
             const firebaseConfig = useRuntimeConfig().public.firebaseConfig as FirebaseOptions;
             const app = initializeApp(firebaseConfig);
-
-            const auth = getAuth(app);
+            const auth = getAuth(app)
+            useState('firebaseAuth', () => auth)
 
             nuxtApp.provide('auth', auth);
             nuxtApp.provide('firestore', getFirestore(app));
             nuxtApp.provide('analytics', getAnalytics(app));
             nuxtApp.provide('storage', getStorage(app));
-
-            console.log("Firebase initialized", getApps());
         }
     }
 });

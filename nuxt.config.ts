@@ -3,8 +3,10 @@ import Aura from "@primevue/themes/aura";
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
+  ssr: false,
   css: ['~/assets/css/main.css'],
   modules: ['@primevue/nuxt-module', '@nuxtjs/google-fonts'],
+  plugins: ['~/plugins/firebase.client.ts'],
 
   postcss: {
     plugins: {
@@ -50,6 +52,9 @@ export default defineNuxtConfig({
         appId: process.env.FIREBASE_APP_ID,
         measurementId: process.env.FIREBASE_MEASUREMENT_ID,
       },
+      auth: {
+        enabled: true,
+      }
     }
-  }
+  },
 });

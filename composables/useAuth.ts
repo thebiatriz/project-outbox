@@ -1,16 +1,18 @@
 import {
-    getAuth,
     onAuthStateChanged,
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
     signOut,
-    type User
+    type User,
+    type Auth
 } from 'firebase/auth';
 import { ref, computed, onMounted } from 'vue';
 
 export default function useAuth() {
-    const auth = getAuth();
+    const auth = useState<Auth>('firebaseAuth').value;
+
     const currentUser = ref<User | null>(null);
+
     const authState = () => {
         onAuthStateChanged(auth, (user) => {
             currentUser.value = user;
